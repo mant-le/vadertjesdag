@@ -13,6 +13,9 @@
 </head>
 
 <body>
+    <button class="button">Open</button>
+
+
     <div class="card">
 
         <div class="card__outside">
@@ -40,5 +43,17 @@
         </div>
     </div>
 </body>
+
+<script>
+
+    document.querySelector('.button').addEventListener('click', function () {
+        const card = document.querySelector('.card');
+        if (card) {
+            card.classList.add('active');
+            document.querySelector('.button').classList.add('active');
+        }
+    });
+
+</script>
 
 </html>

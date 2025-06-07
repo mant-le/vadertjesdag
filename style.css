@@ -13,9 +13,12 @@ strong {
 }
 
 .card {
+    opacity: 0;
     display: grid;
     transition: all 0.3s ease-in-out;
-
+}
+.card.active {
+    opacity: 1;
 }
 
 .card__outside,
@@ -74,6 +77,9 @@ strong {
     border-radius: 20px 0 0 20px;
     box-shadow: 0 0 10px rgba(164, 164, 164, 0.5);
 }
+.card__outside__back::before {
+    border-radius: 20px 0 0 20px;
+}
 
 .card__outside__back::before,
 .card__inside::before {
@@ -95,6 +101,9 @@ strong {
     border-radius: 0 20px 20px 0;
     box-shadow: 0 0 10px rgba(31, 31, 31, 0.5);
     transition: all 0.6s ease;
+}
+.card__inside::before {
+    border-radius: 0 20px 20px 0;
 }
 
 .card__inside__content {
@@ -124,5 +133,34 @@ strong {
 }
 
 .card:hover .card__outside__front {
+    opacity: 0;
+}
+
+.button {
+    font-family: "Onest", sans-serif;
+    background-color: #E4D7B4;
+    color: #D74322;
+    font-weight: 800;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 8px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 10;
+    transition: all;
+    padding: 1rem;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    box-shadow: 0 0 10px rgba(31, 31, 31, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.button:hover {
+    padding: 0.8rem;
+    font-size: 1.7rem;
+}
+
+.button.active {
     opacity: 0;
 }
